@@ -14,7 +14,7 @@ namespace Shuffle
 
             bool isWork = true;
 
-            FillingArray(numbers);
+            FillArray(numbers);
             Console.WriteLine("Исходный массив");
 
             Print(numbers);
@@ -37,37 +37,37 @@ namespace Shuffle
             }
         }
 
-        private static void Shuffle(int[] array)
+        private static void Shuffle(int[] numbers)
         {
             Random random = new Random();
 
             int swap;
             int temp;
 
-            for (int i = 0; i < array.Length; i++)
+            for (int i = 0; i < numbers.Length; i++)
             {
                 swap = random.Next(i + 1);
-                temp = array[swap];
-                array[swap] = array[i];
-                array[i] = temp;
+                temp = numbers[swap];
+                numbers[swap] = numbers[i];
+                numbers[i] = temp;
             }
         }
 
-        private static void Print(int[] array)
+        private static void Print(int[] numbers)
         {
-            for (int i = 0; i < array.Length; i++)
+            for (int i = 0; i < numbers.Length; i++)
             {
-                Console.Write(array[i] + " ");
+                Console.Write($"[{numbers[i]}]");
             }
 
             Console.WriteLine();
         }
 
-        private static void FillingArray(int [] array)
+        private static void FillArray(int [] numbers)
         {
-            for (int i = 0; i < array.Length; i++)
+            for (int i = 0; i < numbers.Length; i++)
             {
-                array[i] = i+1;
+                numbers[i] = i+1;
             }
         }
     }
